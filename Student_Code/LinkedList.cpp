@@ -49,12 +49,13 @@ void LinkedList<T>::clear() {
 
 template<class T>
 T LinkedList<T>::at(int index) {
-    
+    T ret;
+    return ret;
 }
 
 template<class T>
 int LinkedList<T>::size() {
-    
+    return -1;
 }
 
 
