@@ -1,6 +1,6 @@
 #include "Factory.h"
 // You may put your #include statements Here
-
+#include "LinkedList.h"
 using namespace std;
 
 /*
@@ -16,7 +16,7 @@ using namespace std;
 	Example: If you made a class called "LinkedList", you might say, "return new LinkedList<int>();".
 */
 LinkedListInterface<int>* Factory::getLinkedListInt() {
-    return NULL;
+    return new LinkedList<int>();
 }
 
 /*
@@ -28,6 +28,6 @@ LinkedListInterface<int>* Factory::getLinkedListInt() {
 	Example: If you made a class called "LinkedList", you might say, "return new LinkedList<string>();".
 */
 LinkedListInterface<string>* Factory::getLinkedListString() {
-    return NULL;
+    return new LinkedList<string>();
 }
 //=======================================================================================
