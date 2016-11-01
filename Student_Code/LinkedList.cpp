@@ -5,13 +5,13 @@
 //-----------------------------------------------
 
 template<class T>
-LinkedList<T>::LinkedList() {
+LinkedList<T>::LinkedList(void) {
     _Head = new Node;
     _Tail = NULL;
 }
 
 template<class T>
-LinkedList<T>::~LinkedList() {
+LinkedList<T>::~LinkedList(void) {
     delete _Head;
     delete _Tail;
 }
