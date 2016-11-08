@@ -61,7 +61,7 @@ void LinkedList<T>::insertHead(T value) {
 //    {
 //        cout << at(i) << ",";
 //    }
-    cout << endl << endl;
+//    cout << endl << endl;
     if (_Head == NULL)
     {
         _Head = new Node;
@@ -92,7 +92,7 @@ void LinkedList<T>::insertTail(T value) {
 //    {
 //        cout << at(i) << ",";
 //    }
-    cout << endl << endl;
+//    cout << endl << endl;
     if (_Tail == NULL)
     {
         _Head = new Node;
