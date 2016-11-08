@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <iostream>
@@ -118,6 +119,7 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
     
     Node* check = _Head;
     if (!checkVal(value,check)) return;
+    if (checkVal(insertionNode,check)) return;
     
     bool found = false;
     while (!found)
