@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdexcept>
 #include "LinkedListInterface.h"
 
 using namespace std;
