@@ -55,7 +55,7 @@ LinkedList<T>::~LinkedList() {
 
 template<class T>
 void LinkedList<T>::insertHead(T value) {
-    cout << "insertHead()" << endl;
+//    cout << "insertHead()" << endl;
     if (_Head == NULL)
     {
         _Head = new Node;
@@ -81,7 +81,7 @@ void LinkedList<T>::insertHead(T value) {
 
 template<class T>
 void LinkedList<T>::insertTail(T value) {
-    cout << "insertTail()" << endl;
+//    cout << "insertTail()" << endl;
     if (_Tail == NULL)
     {
         _Head = new Node;
@@ -108,7 +108,7 @@ void LinkedList<T>::insertTail(T value) {
 
 template<class T>
 void LinkedList<T>::insertAfter(T value, T insertionNode) {
-    cout << "insertAfter()" << value << ", " << insertionNode << endl;
+//    cout << "insertAfter()" << value << ", " << insertionNode << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
@@ -140,15 +140,26 @@ void LinkedList<T>::remove(T value) {
     if (checkVal(value, find)) return;
     
     bool found = false;
+    bool isHead = false;
     while (!found)
     {
-        if (find->next->data == value) found = true;
+        if (find->data == value) {found = true; isHead = true;}
+        else if (find->next->data == value) found = true;
         else find = find->next;
     }
-    Node* kickIt = find->next;
-    find->next = find->next->next;
-    delete kickIt; //double check this later
-    kickIt = NULL;
+    if (isHead)
+    {
+        _Head = find->next;
+        delete find;
+        find = NULL;
+    }
+    else
+    {
+        Node* kickIt = find->next;
+        find->next = find->next->next;
+        delete kickIt; //double check this later
+        kickIt = NULL;
+    }
 }
 
 template<class T>
