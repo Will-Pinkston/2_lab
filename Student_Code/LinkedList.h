@@ -162,31 +162,20 @@ void LinkedList<T>::clear() {
     }
     _Head = NULL;
     _Tail = NULL;
-    /*
-     clear
-     
-     Remove all nodes from the list.
-     */
 }
 
 template<class T>
 T LinkedList<T>::at(int index) {
+    int checkSize = size();
+    if (index < 0 || index > checkSize - 1) throw out_of_range("at()");
+    
     Node* find = _Head;
     for (int i = 0; i < index; i++)
     {
-        if (find->next == NULL) throw out_of_range("yikes!"); //what string am i supposed to pass in?
+        if (find->next == NULL) throw out_of_range("at()"); //what string am i supposed to pass in?
         find = find->next;
     }
     return find->data;
-    
-    /*
-     at
-     
-     Returns the value of the node at the given index. The list begins at
-     index 0.
-     
-     If the given index is out of range of the list, throw an out of range exception.
-     */
 }
 
 template<class T>
