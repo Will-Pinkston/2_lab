@@ -161,6 +161,13 @@ void LinkedList<T>::remove(T value) {
     Node* find = _Head;
     if (checkVal(value, find)) return;
     
+    if (size() == 1)
+    {
+        delete _Head;
+        _Head = NULL;
+        _Tail = NULL;
+    }
+    
     bool found = false;
     bool isHead = false;
     while (!found)
