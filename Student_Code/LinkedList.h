@@ -55,7 +55,7 @@ LinkedList<T>::~LinkedList() {
 
 template<class T>
 void LinkedList<T>::insertHead(T value) {
-    cout << "insertHead()" << endl;
+    cout << "insertHead(" << value << ")" << endl;
     if (_Head == NULL)
     {
         _Head = new Node;
@@ -81,7 +81,7 @@ void LinkedList<T>::insertHead(T value) {
 
 template<class T>
 void LinkedList<T>::insertTail(T value) {
-    cout << "insertTail()" << endl;
+    cout << "insertTail(" << value << ")" << endl;
     if (_Tail == NULL)
     {
         _Head = new Node;
