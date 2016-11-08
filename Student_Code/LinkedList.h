@@ -124,7 +124,7 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
 //    {
 //        cout << at(i) << ",";
 //    }
-    cout << endl << endl;
+//    cout << endl << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
