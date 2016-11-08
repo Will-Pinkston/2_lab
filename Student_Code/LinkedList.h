@@ -56,11 +56,11 @@ LinkedList<T>::~LinkedList() {
 
 template<class T>
 void LinkedList<T>::insertHead(T value) {
-    cout << "insertHead(" << value << ")" << endl;
-    for (int i = 0; i < size(); i++)
-    {
-        cout << at(i) << ",";
-    }
+//    cout << "insertHead(" << value << ")" << endl;
+//    for (int i = 0; i < size(); i++)
+//    {
+//        cout << at(i) << ",";
+//    }
     cout << endl << endl;
     if (_Head == NULL)
     {
@@ -87,11 +87,11 @@ void LinkedList<T>::insertHead(T value) {
 
 template<class T>
 void LinkedList<T>::insertTail(T value) {
-    cout << "insertTail(" << value << ")" << endl;
-    for (int i = 0; i < size(); i++)
-    {
-        cout << at(i) << ",";
-    }
+//    cout << "insertTail(" << value << ")" << endl;
+//    for (int i = 0; i < size(); i++)
+//    {
+//        cout << at(i) << ",";
+//    }
     cout << endl << endl;
     if (_Tail == NULL)
     {
@@ -119,12 +119,12 @@ void LinkedList<T>::insertTail(T value) {
 
 template<class T>
 void LinkedList<T>::insertAfter(T value, T insertionNode) {
-    cout << "insertAfter(" << value << ", " << insertionNode << ")" << endl;
-    for (int i = 0; i < size(); i++)
-    {
-        cout << at(i) << ",";
-    }
-    cout << endl << endl;
+//    cout << "insertAfter(" << value << ", " << insertionNode << ")" << endl;
+//    for (int i = 0; i < size(); i++)
+//    {
+//        cout << at(i) << ",";
+//    }
+//    cout << endl << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
@@ -152,12 +152,12 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
 
 template<class T>
 void LinkedList<T>::remove(T value) {
-    cout << "remove(" << value << ")" << endl;
-    for (int i = 0; i < size(); i++)
-    {
-        cout << at(i) << ",";
-    }
-    cout << endl << endl;
+//    cout << "remove(" << value << ")" << endl;
+//    for (int i = 0; i < size(); i++)
+//    {
+//        cout << at(i) << ",";
+//    }
+//    cout << endl << endl;
     Node* find = _Head;
     if (checkVal(value, find)) return;
     
@@ -166,6 +166,7 @@ void LinkedList<T>::remove(T value) {
         delete _Head;
         _Head = NULL;
         _Tail = NULL;
+        return;
     }
     
     bool found = false;
@@ -202,7 +203,7 @@ void LinkedList<T>::remove(T value) {
 
 template<class T>
 void LinkedList<T>::clear() {
-    cout << "clear()" << endl;
+//    cout << "clear()" << endl;
     int size_index = size();
     Node* spec;
     for (int i = --size_index; i >= 0; i--)
