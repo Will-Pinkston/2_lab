@@ -109,6 +109,11 @@ void LinkedList<T>::insertTail(T value) {
 template<class T>
 void LinkedList<T>::insertAfter(T value, T insertionNode) {
     cout << "insertAfter(" << value << ", " << insertionNode << ")" << endl;
+    for (int i = 0; i < size(); i++)
+    {
+        cout << at(i) << ",";
+    }
+    cout << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
