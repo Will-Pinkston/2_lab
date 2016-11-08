@@ -55,7 +55,7 @@ LinkedList<T>::~LinkedList() {
 
 template<class T>
 void LinkedList<T>::insertHead(T value) {
-//    cout << "insertHead()" << endl;
+    cout << "insertHead()" << endl;
     if (_Head == NULL)
     {
         _Head = new Node;
@@ -81,7 +81,7 @@ void LinkedList<T>::insertHead(T value) {
 
 template<class T>
 void LinkedList<T>::insertTail(T value) {
-//    cout << "insertTail()" << endl;
+    cout << "insertTail()" << endl;
     if (_Tail == NULL)
     {
         _Head = new Node;
@@ -108,7 +108,7 @@ void LinkedList<T>::insertTail(T value) {
 
 template<class T>
 void LinkedList<T>::insertAfter(T value, T insertionNode) {
-//    cout << "insertAfter()" << value << ", " << insertionNode << endl;
+    cout << "insertAfter(" << value << ", " << insertionNode << ")" << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
@@ -128,7 +128,6 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
     insert->next = check->next;
     check->next = insert;
     if (check == _Tail) _Tail = insert;
-    
 }
 
 //------------------------------------------------------------
@@ -136,6 +135,7 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
 
 template<class T>
 void LinkedList<T>::remove(T value) {
+    cout << "remove(" << value << ")" << endl;
     Node* find = _Head;
     if (checkVal(value, find)) return;
     
