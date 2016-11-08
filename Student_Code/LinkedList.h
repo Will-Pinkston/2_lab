@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <stdexcept>
 #include "LinkedListInterface.h"
 
@@ -54,7 +55,7 @@ LinkedList<T>::~LinkedList() {
 
 template<class T>
 void LinkedList<T>::insertHead(T value) {
-    //cout << "insertHead()" << endl;
+    cout << "insertHead()" << endl;
     if (_Head == NULL)
     {
         _Head = new Node;
@@ -80,7 +81,7 @@ void LinkedList<T>::insertHead(T value) {
 
 template<class T>
 void LinkedList<T>::insertTail(T value) {
-    //cout << "insertTail()" << endl;
+    cout << "insertTail()" << endl;
     if (_Tail == NULL)
     {
         _Head = new Node;
@@ -107,7 +108,7 @@ void LinkedList<T>::insertTail(T value) {
 
 template<class T>
 void LinkedList<T>::insertAfter(T value, T insertionNode) {
-    //cout << "hi" << endl;
+    cout << "insertAfter()" << value << ", " << insertionNode << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
@@ -119,7 +120,6 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
         if (check->data == insertionNode) found = true;
         else
         {
-            if (check->next == NULL) return;
             check = check->next;
         }
     }
@@ -127,6 +127,8 @@ void LinkedList<T>::insertAfter(T value, T insertionNode) {
     insert->data = value;
     insert->next = check->next;
     check->next = insert;
+    if (check == _Tail) _Tail = insert;
+    
 }
 
 //------------------------------------------------------------
