@@ -174,10 +174,19 @@ void LinkedList<T>::remove(T value) {
     }
     else
     {
-        Node* kickIt = find->next;
-        find->next = find->next->next;
-        delete kickIt; //double check this later
-        kickIt = NULL;
+        if (_Tail == find->next)
+        {
+            _Tail = find;
+            delete find->next;
+            find->next = NULL;
+        }
+        else
+        {
+            Node* kickIt = find->next;
+            find->next = find->next->next;
+            delete kickIt; //double check this later
+            kickIt = NULL;
+        }
     }
 }
 
