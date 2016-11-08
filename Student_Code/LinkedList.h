@@ -54,6 +54,7 @@ LinkedList<T>::~LinkedList() {
 
 template<class T>
 void LinkedList<T>::insertHead(T value) {
+    //cout << "insertHead()" << endl;
     if (_Head == NULL)
     {
         _Head = new Node;
@@ -79,6 +80,7 @@ void LinkedList<T>::insertHead(T value) {
 
 template<class T>
 void LinkedList<T>::insertTail(T value) {
+    //cout << "insertTail()" << endl;
     if (_Tail == NULL)
     {
         _Head = new Node;
@@ -105,6 +107,7 @@ void LinkedList<T>::insertTail(T value) {
 
 template<class T>
 void LinkedList<T>::insertAfter(T value, T insertionNode) {
+    //cout << "hi" << endl;
     if (_Head == NULL) return;
     
     Node* check = _Head;
@@ -167,7 +170,10 @@ void LinkedList<T>::clear() {
 template<class T>
 T LinkedList<T>::at(int index) {
     int checkSize = size();
-    if (index < 0 || index > checkSize - 1) throw out_of_range("at()");
+    if (checkSize != 0)
+    {
+        if (index < 0 || index > checkSize - 1) throw out_of_range("at()");
+    }
     
     Node* find = _Head;
     for (int i = 0; i < index; i++)
